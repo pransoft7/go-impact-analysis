@@ -182,6 +182,8 @@ This prototype demonstrates the core workflow. The full LFX mentorship project a
 - [ ] **Sandboxed execution** — Run test suites inside containers to isolate network access, environment variables, system resources, and the Go build/module cache from the host and from each other.
 - [ ] **CI/CD integration** — GitHub Action / CLI flag to run as part of a PR workflow and post results as a check or comment.
 - [ ] **Caching & incremental runs** — Skip dependents whose relevant dependency graph hasn't changed between runs.
+- [ ] **Timeout & build-failure handling** — Dependents that fail to build or hang indefinitely are not yet handled gracefully; the tool currently blocks until completion.
+- [ ] **Bounded execution** — After automatic dependent discovery, there is no mechanism to cap the run to the top-N most important dependents (e.g. prioritising CNCF projects) to avoid unbounded compute.
 
 ---
 
@@ -191,7 +193,5 @@ The following are explicitly **out of scope** for this tool:
 
 - **Root-cause analysis** — The tool classifies outcomes (pass/fail) but does not diagnose *why* a test failed. Investigating failures remains a manual step for the maintainer.
 - **Flaky test handling** — Each test run is a single atomic pass/fail. There is no retry logic, statistical flake detection, or quarantine mechanism.
-- **Timeout & build-failure handling** — Dependents that fail to build or hang indefinitely are not yet handled gracefully; the tool currently blocks until completion.
-- **Bounded execution** — After automatic dependent discovery, there is no mechanism to cap the run to the top-N most important dependents (e.g. prioritising CNCF projects) to avoid unbounded compute.
 - **Non-Go dependents** — Only Go modules are supported. Dependents in other languages are out of scope.
 - **External service dependencies** — Tests that depend on external infrastructure (databases, APIs, message brokers) may produce false negatives since those services are unavailable during the run. This can create noise in results and is not accounted for.
