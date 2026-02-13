@@ -1,0 +1,30 @@
+Workspace: /var/folders/6t/h6tr9q253j506m0_yt95q80r0000gn/T/otel-impact-863086512
+
+================================================
+Dependent: https://github.com/open-telemetry/opentelemetry-go-contrib.git
+Module   : instrumentation/net/http/otelhttp
+================================================
+
+--- Baseline ---
+✔ PASS
+Duration: 3s
+
+--- Released ---
+Applying replacements for prefix: go.opentelemetry.io/otel/sdk
+  replace go.opentelemetry.io/otel/sdk => /var/folders/6t/h6tr9q253j506m0_yt95q80r0000gn/T/otel-impact-863086512/released/sdk
+  replace go.opentelemetry.io/otel/sdk/metric => /var/folders/6t/h6tr9q253j506m0_yt95q80r0000gn/T/otel-impact-863086512/released/sdk/metric
+✔ PASS
+Duration: 3s
+
+--- Modified ---
+Applying replacements for prefix: go.opentelemetry.io/otel/sdk
+  replace go.opentelemetry.io/otel/sdk => /Users/pranavaskumar/OSS/opentelemetry-go/sdk
+  replace go.opentelemetry.io/otel/sdk/metric => /Users/pranavaskumar/OSS/opentelemetry-go/sdk/metric
+✔ PASS
+Duration: 2s
+
+Summary:
+Baseline : PASS
+Released : PASS
+Modified : PASS
+Outcome  : UNCHANGED

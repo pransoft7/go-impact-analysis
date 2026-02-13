@@ -1,0 +1,15 @@
+{
+    "target": {
+        "repo_url": "https://github.com/open-telemetry/opentelemetry-go.git",
+        "module_prefix": "go.opentelemetry.io/otel/sdk",
+        "released_ref": "v1.40.0",
+        "modified_local_path": "/Users/pranavaskumar/OSS/opentelemetry-go"
+    },
+    "dependents": [
+        {
+            "repo_url": "https://github.com/open-telemetry/opentelemetry-go-contrib.git",
+            "module_path": "instrumentation/net/http/otelhttp",
+            "ref": "main"
+        }
+    ]
+}
